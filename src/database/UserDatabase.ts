@@ -26,7 +26,6 @@ export class UserDatabase extends BaseDatabase {
     }
 
 
-
     public async findUserById(id:string){
         const [ userDB ]: TUserDB[] | undefined[] = await BaseDatabase
             .connection(UserDatabase.TABLE_USERS)
@@ -35,15 +34,11 @@ export class UserDatabase extends BaseDatabase {
             return userDB
     }
 
-
-
     public async insertUser(newUserDB:TUserDB){
         await BaseDatabase
             .connection(UserDatabase.TABLE_USERS)
             .insert(newUserDB)
     }   
-
-
 
 
 
